@@ -1,0 +1,301 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Aj	sparse_formats.h	/^    IndexType * Aj;           \/\/column indices stored in a (cols_per_row x stride) matrix$/;"	m	struct:ell_matrix
+Aj	sparse_formats.h	/^    IndexType * Aj;  \/\/column indices$/;"	m	struct:csr_matrix
+Aj	sparse_formats.h	/^    IndexType * Aj;  \/\/column indices$/;"	m	struct:mix_matrix
+Ap	sparse_formats.h	/^    IndexType * Ap;  \/\/row pointer$/;"	m	struct:csr_matrix
+Ap	sparse_formats.h	/^    IndexType * Ap;  \/\/row pointer$/;"	m	struct:mix_matrix
+Ax	sparse_formats.h	/^    ValueType * Ax;           \/\/nonzero values stored in a (cols_per_row x stride) matrix$/;"	m	struct:ell_matrix
+Ax	sparse_formats.h	/^    ValueType * Ax;  \/\/nonzeros$/;"	m	struct:csr_matrix
+Ax	sparse_formats.h	/^    ValueType * Ax;  \/\/nonzeros$/;"	m	struct:mix_matrix
+CC	Makefile	/^CC=icc$/;"	m
+COLLECT_FEATURES	config_init.h	12;"	d
+COLLECT_FEATURES	config_save.h	12;"	d
+DIVIDE_INTO	utils.h	35;"	d
+EMUSYNC	utils.h	28;"	d
+EMUSYNC	utils.h	30;"	d
+FLAG	Makefile	/^FLAG=-O3 -msse4.2 -fp-model source $/;"	m
+FREQ_CPU	config_init.h	5;"	d
+FREQ_CPU	config_save.h	5;"	d
+I	sparse_formats.h	/^    IndexType * I;  \/\/row indices$/;"	m	struct:coo_matrix
+J	sparse_formats.h	/^    IndexType * J;  \/\/column indices$/;"	m	struct:coo_matrix
+KERNELS	Makefile	/^KERNELS=spmv_host\/spmv_dia_opt_single.o spmv_host\/spmv_dia_opt_double.o \\$/;"	m
+KERNEL_TAGS	config_save.h	13;"	d
+L3CACHE_SIZE	config_init.h	7;"	d
+L3CACHE_SIZE	config_save.h	7;"	d
+LDFLAG	Makefile	/^LDFLAG=-O3 -msse4.2 -fp-model source$/;"	m
+MAT_FEATURES	config_save.h	15;"	d
+MAT_GRID_SIZE	config_init.h	2;"	d
+MAT_GRID_SIZE	config_save.h	2;"	d
+MAX_ITER	config_init.h	3;"	d
+MAX_ITER	config_save.h	3;"	d
+MEM_SIZE	config_init.h	6;"	d
+MEM_SIZE	config_save.h	6;"	d
+MIN_ITER	config_init.h	8;"	d
+MIN_ITER	config_save.h	8;"	d
+MM_ARRAY_STR	mmio.h	105;"	d
+MM_COMPLEX_STR	mmio.h	109;"	d
+MM_COORDINATE_STR	mmio.h	107;"	d
+MM_COULD_NOT_READ_FILE	mmio.h	79;"	d
+MM_COULD_NOT_WRITE_FILE	mmio.h	85;"	d
+MM_DENSE_STR	mmio.h	106;"	d
+MM_GENERAL_STR	mmio.h	112;"	d
+MM_HERM_STR	mmio.h	114;"	d
+MM_INT_STR	mmio.h	111;"	d
+MM_IO_H	mmio.h	10;"	d
+MM_LINE_TOO_LONG	mmio.h	84;"	d
+MM_MAX_LINE_LENGTH	mmio.h	12;"	d
+MM_MAX_TOKEN_LENGTH	mmio.h	14;"	d
+MM_MTX_STR	mmio.h	104;"	d
+MM_NOT_MTX	mmio.h	81;"	d
+MM_NO_HEADER	mmio.h	82;"	d
+MM_PATTERN_STR	mmio.h	116;"	d
+MM_PREMATURE_EOF	mmio.h	80;"	d
+MM_REAL_STR	mmio.h	110;"	d
+MM_SKEW_STR	mmio.h	115;"	d
+MM_SPARSE_STR	mmio.h	108;"	d
+MM_SYMM_STR	mmio.h	113;"	d
+MM_UNSUPPORTED_TYPE	mmio.h	83;"	d
+MM_typecode	mmio.h	/^typedef char MM_typecode[4];$/;"	t
+MatrixMarketBanner	mmio.h	13;"	d
+NUM_FORMATS	config_init.h	10;"	d
+NUM_FORMATS	config_save.h	10;"	d
+OBJS	Makefile	/^OBJS=driver.o mmio.o ${KERNELS} $/;"	m
+PackedIndexType	sparse_formats.h	/^typedef unsigned int PackedIndexType;$/;"	t
+SMEM_SIZE	partition.cxx	24;"	d	file:
+TIME_LIMIT	config_init.h	9;"	d
+TIME_LIMIT	config_save.h	9;"	d
+V	sparse_formats.h	/^    ValueType * V;  \/\/nonzero values$/;"	m	struct:coo_matrix
+__RDTSC_H_DEFINED__	rdtsc.h	2;"	d
+__spmv_coo_serial_host_simple	spmv_host/coo_host.h	/^void __spmv_coo_serial_host_simple(const IndexType num_nonzeros,$/;"	f
+__spmv_coo_serial_host_sse_double	spmv_host/spmv_coo_opt_double.s	/^__spmv_coo_serial_host_sse_double:$/;"	l
+__spmv_coo_serial_host_sse_float	spmv_host/spmv_coo_opt_single.s	/^__spmv_coo_serial_host_sse_float:$/;"	l
+__spmv_csr_serial_host_simple	spmv_host/csr_host.h	/^void __spmv_csr_serial_host_simple(const IndexType num_rows, $/;"	f
+__spmv_csr_serial_host_sse_double	spmv_host/spmv_csr_opt_double.s	/^__spmv_csr_serial_host_sse_double:$/;"	l
+__spmv_csr_serial_host_sse_float	spmv_host/spmv_csr_opt_single.s	/^__spmv_csr_serial_host_sse_float:$/;"	l
+__spmv_dia_serial_host_simple	spmv_host/dia_host.h	/^void __spmv_dia_serial_host_simple(const IndexType num_rows,$/;"	f
+__spmv_dia_serial_host_sse_double	spmv_host/spmv_dia_opt_double.s	/^__spmv_dia_serial_host_sse_double:$/;"	l
+__spmv_dia_serial_host_sse_float	spmv_host/spmv_dia_opt_single.s	/^__spmv_dia_serial_host_sse_float:$/;"	l
+__spmv_ell_serial_host_simple	spmv_host/ell_host.h	/^void __spmv_ell_serial_host_simple(const IndexType num_rows,$/;"	f
+__spmv_ell_serial_host_sse_double	spmv_host/spmv_ell_opt_double.s	/^__spmv_ell_serial_host_sse_double:$/;"	l
+__spmv_ell_serial_host_sse_float	spmv_host/spmv_ell_opt_single.s	/^__spmv_ell_serial_host_sse_float:$/;"	l
+bAj	sparse_formats.h	/^    IndexType * bAj;  \/\/column indices$/;"	m	struct:bcsr_matrix
+bAp	sparse_formats.h	/^    IndexType * bAp;  \/\/row pointer$/;"	m	struct:bcsr_matrix
+bAx	sparse_formats.h	/^    ValueType * bAx;  \/\/nonzeros$/;"	m	struct:bcsr_matrix
+bcsr_matrix	sparse_formats.h	/^struct bcsr_matrix : public matrix_shape<IndexType>$/;"	s
+benchmark_spmv	benchmark_spmv.h	/^double benchmark_spmv(SparseMatrix & sp_host, SpMV spmv, const size_t min_iterations, const size_t max_iterations, const double seconds, const char * method_name)$/;"	f
+benchmark_spmv_on_host	benchmark_spmv.h	/^double benchmark_spmv_on_host(SparseMatrix & sp_host, SpMV spmv, char * method_name = NULL)$/;"	f
+bincount	array_utils.h	/^std::vector<IndexType> bincount(const IndexType * V, const IndexType N){$/;"	f
+bytes_per_spmv	benchmark_spmv.h	/^size_t bytes_per_spmv(const coo_matrix<IndexType,ValueType>& mtx)$/;"	f
+bytes_per_spmv	benchmark_spmv.h	/^size_t bytes_per_spmv(const csr_matrix<IndexType,ValueType>& mtx)$/;"	f
+bytes_per_spmv	benchmark_spmv.h	/^size_t bytes_per_spmv(const dia_matrix<IndexType,ValueType>& mtx)$/;"	f
+bytes_per_spmv	benchmark_spmv.h	/^size_t bytes_per_spmv(const ell_matrix<IndexType,ValueType>& mtx)$/;"	f
+col_block_size	sparse_formats.h	/^    int col_block_size;$/;"	m	struct:bcsr_matrix
+compare_spmv_kernels	test_spmv.h	/^void compare_spmv_kernels(const SparseMatrix1 & sm1_host, SpMV1 spmv1,$/;"	f
+complete_ndiags	sparse_formats.h	/^    IndexType complete_ndiags;$/;"	m	struct:dia_matrix
+compute_hyb_cols_per_row	sparse_operations.h	/^IndexType compute_hyb_cols_per_row(const csr_matrix<IndexType,ValueType>& csr,$/;"	f
+compute_thread_assignments_H1	csr_to_pkt.h	/^compute_thread_assignments_H1(IndexType part_num, $/;"	f
+compute_thread_assignments_H2	csr_to_pkt.h	/^compute_thread_assignments_H2(IndexType part_num, $/;"	f
+coo	sparse_formats.h	/^    coo_matrix<IndexType,ValueType> coo; \/\/COO portion$/;"	m	struct:hyb_matrix
+coo	sparse_formats.h	/^    coo_matrix<IndexType,ValueType> coo;$/;"	m	struct:pkt_matrix
+coo_matrix	sparse_formats.h	/^struct coo_matrix : public matrix_shape<IndexType> $/;"	s
+coo_to_csr	sparse_conversions.h	/^ coo_to_csr(const coo_matrix<IndexType,ValueType>& coo, bool compact = false){  $/;"	f
+coo_to_csr	sparse_conversions.h	/^void coo_to_csr(const IndexType * rows,$/;"	f
+copy_array	mem.h	/^T * copy_array(const T * src, const size_t N)$/;"	f
+csr_is_structurally_symmetric	partition.h	/^bool csr_is_structurally_symmetric(const IndexType * Ap, $/;"	f
+csr_is_structurally_symmetric	partition.h	/^bool csr_is_structurally_symmetric(const csr_matrix<IndexType,ValueType>& csr){$/;"	f
+csr_matrix	sparse_formats.h	/^struct csr_matrix : public matrix_shape<IndexType>$/;"	s
+csr_to_bcsr	sparse_conversions.h	/^ csr_to_bcsr(const csr_matrix<IndexType,ValueType>& csr, int row_block_size, int col_block_size, double min_fill_ratio)$/;"	f
+csr_to_coo	sparse_conversions.h	/^ csr_to_coo(const csr_matrix<IndexType,ValueType>& csr, FILE *fp_feature)$/;"	f
+csr_to_coo	sparse_conversions.h	/^void csr_to_coo(const IndexType * Ap,$/;"	f
+csr_to_dia	sparse_conversions.h	/^ csr_to_dia(const csr_matrix<IndexType,ValueType>& csr, const IndexType max_diags, FILE *fp_feature, const IndexType alignment = 16)$/;"	f
+csr_to_ell	sparse_conversions.h	/^ csr_to_ell(const csr_matrix<IndexType,ValueType>& csr, const IndexType max_cols_per_row, FILE *fp_feature, const IndexType alignment = 16)$/;"	f
+csr_to_hyb	sparse_conversions.h	/^ csr_to_hyb(const csr_matrix<IndexType,ValueType>& csr, const IndexType max_RD, const IndexType min_RD, const IndexType alignment = 16)$/;"	f
+csr_to_mix	sparse_conversions.h	/^ csr_to_mix(const csr_matrix<IndexType,ValueType>& csr)$/;"	f
+csr_to_pkt	csr_to_pkt.h	/^csr_to_pkt(const csr_matrix<IndexType,ValueType>& csr, $/;"	f
+csr_transpose	sparse_operations.h	/^ csr_transpose(const csr_matrix<IndexType,ValueType>& csr){	$/;"	f
+csr_transpose	sparse_operations.h	/^void csr_transpose(const IndexType * Ap, $/;"	f
+cumsum	array_utils.h	/^std::vector<T> cumsum(std::vector<T> V){$/;"	f
+data_array	sparse_formats.h	/^    ValueType * data_array;         \/\/ nonzero values$/;"	m	struct:packet_array
+delete_array	mem.h	/^void delete_array(T * p) $/;"	f
+delete_bcsr_matrix	sparse_formats.h	/^void delete_bcsr_matrix(bcsr_matrix<IndexType,ValueType>& bcsr){$/;"	f
+delete_coo_matrix	sparse_formats.h	/^void delete_coo_matrix(coo_matrix<IndexType,ValueType>& coo){$/;"	f
+delete_csr_matrix	sparse_formats.h	/^void delete_csr_matrix(csr_matrix<IndexType,ValueType>& csr){$/;"	f
+delete_dia_matrix	sparse_formats.h	/^void delete_dia_matrix(dia_matrix<IndexType,ValueType>& dia){$/;"	f
+delete_ell_matrix	sparse_formats.h	/^void delete_ell_matrix(ell_matrix<IndexType,ValueType>& ell){$/;"	f
+delete_host_matrix	sparse_formats.h	/^void delete_host_matrix(bcsr_matrix<IndexType,ValueType>& bcsr){ delete_bcsr_matrix(bcsr); }$/;"	f
+delete_host_matrix	sparse_formats.h	/^void delete_host_matrix(coo_matrix<IndexType,ValueType>& coo){ delete_coo_matrix(coo); }$/;"	f
+delete_host_matrix	sparse_formats.h	/^void delete_host_matrix(csr_matrix<IndexType,ValueType>& csr){ delete_csr_matrix(csr); }$/;"	f
+delete_host_matrix	sparse_formats.h	/^void delete_host_matrix(dia_matrix<IndexType,ValueType>& dia){ delete_dia_matrix(dia); }$/;"	f
+delete_host_matrix	sparse_formats.h	/^void delete_host_matrix(ell_matrix<IndexType,ValueType>& ell){ delete_ell_matrix(ell); }$/;"	f
+delete_host_matrix	sparse_formats.h	/^void delete_host_matrix(hyb_matrix<IndexType,ValueType>& hyb){  delete_hyb_matrix(hyb); }$/;"	f
+delete_host_matrix	sparse_formats.h	/^void delete_host_matrix(pkt_matrix<IndexType, ValueType>& pm){ delete_pkt_matrix(pm); }$/;"	f
+delete_hyb_matrix	sparse_formats.h	/^void delete_hyb_matrix(hyb_matrix<IndexType,ValueType>& hyb){$/;"	f
+delete_packet_array	sparse_formats.h	/^void delete_packet_array(packet_array<IndexType,ValueType>& pa){$/;"	f
+delete_pkt_matrix	sparse_formats.h	/^void delete_pkt_matrix(pkt_matrix<IndexType, ValueType>& pm)$/;"	f
+dia_matrix	sparse_formats.h	/^struct dia_matrix : public matrix_shape<IndexType> $/;"	s
+diag_data	sparse_formats.h	/^    ValueType * diag_data;     \/\/nonzero values stored in a (num_diags x num_cols) matrix $/;"	m	struct:dia_matrix
+diag_offsets	sparse_formats.h	/^    int       * diag_offsets;  \/\/diagonal offsets (must be a signed type)$/;"	m	struct:dia_matrix
+ell	sparse_formats.h	/^    ell_matrix<IndexType,ValueType> ell; \/\/ELL portion$/;"	m	struct:hyb_matrix
+ell_matrix	sparse_formats.h	/^struct ell_matrix : public matrix_shape<IndexType> $/;"	s
+end	timer.h	/^    long long int end;$/;"	m	class:timer
+gather_dev_kernel	utils.h	/^gather_dev_kernel(ValueType * dest, const ValueType * src, const IndexType* map, const size_t N)$/;"	f
+gather_device	utils.h	/^void gather_device(ValueType * dest, const ValueType * src, const IndexType* map, const size_t N)$/;"	f
+get_arg	cmdline.h	/^char * get_arg(int argc, char ** argv, const char * key)$/;"	f
+get_argval	cmdline.h	/^char * get_argval(int argc, char ** argv, const char * key)$/;"	f
+gflops	sparse_formats.h	/^    double time, gflops;$/;"	m	struct:matrix_shape
+hyb_matrix	sparse_formats.h	/^struct hyb_matrix : public matrix_shape<IndexType>$/;"	s
+index_array	sparse_formats.h	/^    PackedIndexType * index_array;  \/\/ compressed row\/col indices$/;"	m	struct:packet_array
+index_type	sparse_formats.h	/^    typedef IndexType index_type;$/;"	t	struct:bcsr_matrix
+index_type	sparse_formats.h	/^    typedef IndexType index_type;$/;"	t	struct:coo_matrix
+index_type	sparse_formats.h	/^    typedef IndexType index_type;$/;"	t	struct:csr_matrix
+index_type	sparse_formats.h	/^    typedef IndexType index_type;$/;"	t	struct:dia_matrix
+index_type	sparse_formats.h	/^    typedef IndexType index_type;$/;"	t	struct:ell_matrix
+index_type	sparse_formats.h	/^    typedef IndexType index_type;$/;"	t	struct:hyb_matrix
+index_type	sparse_formats.h	/^    typedef IndexType index_type;$/;"	t	struct:matrix_shape
+index_type	sparse_formats.h	/^    typedef IndexType index_type;$/;"	t	struct:mix_matrix
+index_type	sparse_formats.h	/^    typedef IndexType index_type;$/;"	t	struct:packet_array
+index_type	sparse_formats.h	/^    typedef IndexType index_type;$/;"	t	struct:pkt_matrix
+laplacian_5pt	gallery.h	/^csr_matrix<IndexType,ValueType> laplacian_5pt(const IndexType N)$/;"	f
+large_grid_thread_id	utils.h	85;"	d
+main	driver.cpp	/^int main(int argc, char** argv)$/;"	f
+main	partition.cxx	/^int main(int argc, char** argv)$/;"	f
+make_large_grid	utils.h	/^dim3 make_large_grid(const unsigned int num_blocks){$/;"	f
+make_large_grid	utils.h	/^dim3 make_large_grid(const unsigned int num_threads, const unsigned int blocksize){$/;"	f
+make_small_grid	utils.h	/^dim3 make_small_grid(const unsigned int num_blocks){$/;"	f
+make_small_grid	utils.h	/^dim3 make_small_grid(const unsigned int num_threads, const unsigned int blocksize){$/;"	f
+matrix_shape	sparse_formats.h	/^struct matrix_shape$/;"	s
+max_RD	sparse_formats.h	/^    IndexType max_RD;$/;"	m	struct:ell_matrix
+max_rows_per_packet	sparse_formats.h	/^    IndexType max_rows_per_packet;   \/\/ maximum over all packets$/;"	m	struct:pkt_matrix
+maximum_relative_error	test_spmv.h	/^T maximum_relative_error(const T * A, const T * B, const size_t N)$/;"	f
+memcpy_array	mem.h	/^void memcpy_array(T * dst, const T * src, const size_t N)$/;"	f
+memcpy_device	utils.h	/^__device__ void memcpy_device(ValueType * dest, const ValueType * src, const IndexType num_values){ $/;"	f
+memset_device	utils.h	/^__device__ void memset_device(T * dest, const T val, unsigned int num_values){$/;"	f
+milliseconds_elapsed	timer.h	/^    float milliseconds_elapsed()$/;"	f	class:timer
+min_RD	sparse_formats.h	/^    IndexType min_RD;$/;"	m	struct:ell_matrix
+mix_matrix	sparse_formats.h	/^struct mix_matrix : public matrix_shape<IndexType>$/;"	s
+mm_clear_typecode	mmio.h	70;"	d
+mm_initialize_typecode	mmio.h	73;"	d
+mm_is_array	mmio.h	36;"	d
+mm_is_complex	mmio.h	38;"	d
+mm_is_coordinate	mmio.h	34;"	d
+mm_is_dense	mmio.h	35;"	d
+mm_is_general	mmio.h	44;"	d
+mm_is_hermitian	mmio.h	46;"	d
+mm_is_integer	mmio.h	41;"	d
+mm_is_matrix	mmio.h	31;"	d
+mm_is_pattern	mmio.h	40;"	d
+mm_is_real	mmio.h	39;"	d
+mm_is_skew	mmio.h	45;"	d
+mm_is_sparse	mmio.h	33;"	d
+mm_is_symmetric	mmio.h	43;"	d
+mm_is_valid	mmio.cpp	/^int mm_is_valid(MM_typecode matcode)$/;"	f
+mm_read_banner	mmio.cpp	/^int mm_read_banner(FILE *f, MM_typecode *matcode)$/;"	f
+mm_read_mtx_array_size	mmio.cpp	/^int mm_read_mtx_array_size(FILE *f, int *M, int *N)$/;"	f
+mm_read_mtx_crd	mmio.cpp	/^int mm_read_mtx_crd(char *fname, int *M, int *N, int *nz, int **I, int **J, $/;"	f
+mm_read_mtx_crd_data	mmio.cpp	/^int mm_read_mtx_crd_data(FILE *f, int M, int N, int nz, int I[], int J[],$/;"	f
+mm_read_mtx_crd_entry	mmio.cpp	/^int mm_read_mtx_crd_entry(FILE *f, int *I, int *J,$/;"	f
+mm_read_mtx_crd_size	mmio.cpp	/^int mm_read_mtx_crd_size(FILE *f, int *M, int *N, int *nz )$/;"	f
+mm_read_unsymmetric_sparse	mmio.cpp	/^int mm_read_unsymmetric_sparse(const char *fname, int *M_, int *N_, int *nz_,$/;"	f
+mm_set_array	mmio.h	55;"	d
+mm_set_complex	mmio.h	59;"	d
+mm_set_coordinate	mmio.h	54;"	d
+mm_set_dense	mmio.h	56;"	d
+mm_set_general	mmio.h	66;"	d
+mm_set_hermitian	mmio.h	68;"	d
+mm_set_integer	mmio.h	62;"	d
+mm_set_matrix	mmio.h	53;"	d
+mm_set_pattern	mmio.h	61;"	d
+mm_set_real	mmio.h	60;"	d
+mm_set_skew	mmio.h	67;"	d
+mm_set_sparse	mmio.h	57;"	d
+mm_set_symmetric	mmio.h	65;"	d
+mm_strdup	mmio.cpp	/^char *mm_strdup(const char *s)$/;"	f
+mm_typecode_to_str	mmio.cpp	/^char  *mm_typecode_to_str(MM_typecode matcode)$/;"	f
+mm_write_banner	mmio.cpp	/^int mm_write_banner(FILE *f, MM_typecode matcode)$/;"	f
+mm_write_mtx_array_size	mmio.cpp	/^int mm_write_mtx_array_size(FILE *f, int M, int N)$/;"	f
+mm_write_mtx_crd	mmio.cpp	/^int mm_write_mtx_crd(char fname[], int M, int N, int nz, int I[], int J[],$/;"	f
+mm_write_mtx_crd_size	mmio.cpp	/^int mm_write_mtx_crd_size(FILE *f, int M, int N, int nz)$/;"	f
+new_array	mem.h	/^T * new_array(const size_t N) $/;"	f
+num_block_cols	sparse_formats.h	/^    IndexType num_block_cols;$/;"	m	struct:bcsr_matrix
+num_block_rows	sparse_formats.h	/^    IndexType num_block_rows;$/;"	m	struct:bcsr_matrix
+num_blocks	sparse_formats.h	/^    IndexType num_blocks;$/;"	m	struct:bcsr_matrix
+num_cols	sparse_formats.h	/^    IndexType num_rows, num_cols, num_nonzeros;$/;"	m	struct:matrix_shape
+num_nonzeros	sparse_formats.h	/^    IndexType num_rows, num_cols, num_nonzeros;$/;"	m	struct:matrix_shape
+num_packets	sparse_formats.h	/^    IndexType num_packets;$/;"	m	struct:pkt_matrix
+num_rows	sparse_formats.h	/^    IndexType num_rows, num_cols, num_nonzeros;$/;"	m	struct:matrix_shape
+num_rows_left	sparse_formats.h	/^    IndexType num_rows_left;$/;"	m	struct:bcsr_matrix
+nzs_ratio	sparse_formats.h	/^    double nzs_ratio;$/;"	m	struct:bcsr_matrix
+packet_array	sparse_formats.h	/^struct packet_array : public matrix_shape<IndexType>$/;"	s
+packets	sparse_formats.h	/^    packet_array<IndexType,ValueType> packets;$/;"	m	struct:pkt_matrix
+partition_csr	partition.h	/^IndexType partition_csr(const csr_matrix<IndexType,ValueType>& graph, $/;"	f
+partition_matrix	partition.cxx	/^void partition_matrix(const char * mm_filename, $/;"	f
+permute_new_to_old	sparse_formats.h	/^    IndexType * permute_new_to_old;$/;"	m	struct:pkt_matrix
+permute_old_to_new	sparse_formats.h	/^    IndexType * permute_old_to_new;  $/;"	m	struct:pkt_matrix
+pkt_matrix	sparse_formats.h	/^struct pkt_matrix : public matrix_shape<IndexType>$/;"	s
+pkt_pack_indices	sparse_formats.h	188;"	d
+pkt_unpack_col_index	sparse_formats.h	190;"	d
+pkt_unpack_row_index	sparse_formats.h	189;"	d
+pos_end	sparse_formats.h	/^    IndexType * pos_end;      $/;"	m	struct:packet_array
+pos_start	sparse_formats.h	/^    IndexType * pos_start;          \/\/ start ptr into index and data arrays for each thread$/;"	m	struct:packet_array
+rdtsc	rdtsc.h	/^static __inline__ unsigned long long rdtsc(void)$/;"	f
+read_coo_matrix	sparse_io.h	/^coo_matrix<IndexType,ValueType> read_coo_matrix(const char * mm_filename)$/;"	f
+read_csr_matrix	sparse_io.h	/^csr_matrix<IndexType,ValueType> read_csr_matrix(const char * mm_filename, bool compact = false)$/;"	f
+row_block_size	sparse_formats.h	/^    int row_block_size;$/;"	m	struct:bcsr_matrix
+row_ptr	sparse_formats.h	/^    IndexType * row_ptr;             \/\/ packet i corresponds to rows row_ptr[i] through row_ptr[i+1] - 1$/;"	m	struct:pkt_matrix
+run_all_kernels	driver.cpp	/^void run_all_kernels(int argc, char **argv)$/;"	f
+schedule_work	csr_to_pkt.h	/^void schedule_work(pkt_matrix<IndexType,ValueType>& pm, $/;"	f
+seconds_elapsed	timer.h	/^    float seconds_elapsed()$/;"	f	class:timer
+small_grid_thread_id	utils.h	84;"	d
+spmv_bcsr_serial_host	spmv_host/bcsr_host.h	/^void spmv_bcsr_serial_host(const bcsr_matrix<IndexType, ValueType>& bcsr, $/;"	f
+spmv_coo_serial_host_simple	spmv_host/coo_host.h	/^void spmv_coo_serial_host_simple(const coo_matrix<IndexType, ValueType>& coo, $/;"	f
+spmv_coo_serial_host_sse	spmv_host/coo_host.h	/^void spmv_coo_serial_host_sse(const coo_matrix<IndexType, ValueType>& coo, $/;"	f
+spmv_csr_serial_host_simple	spmv_host/csr_host.h	/^void spmv_csr_serial_host_simple(const csr_matrix<IndexType, ValueType>& csr, $/;"	f
+spmv_csr_serial_host_sse	spmv_host/csr_host.h	/^void spmv_csr_serial_host_sse(const csr_matrix<IndexType, ValueType>& csr, $/;"	f
+spmv_dia_serial_host_simple	spmv_host/dia_host.h	/^void spmv_dia_serial_host_simple(const dia_matrix<IndexType, ValueType>& dia, $/;"	f
+spmv_dia_serial_host_sse	spmv_host/dia_host.h	/^void spmv_dia_serial_host_sse(const dia_matrix<IndexType, ValueType>& dia, $/;"	f
+spmv_ell_serial_host_simple	spmv_host/ell_host.h	/^void spmv_ell_serial_host_simple(const ell_matrix<IndexType, ValueType>& ell, $/;"	f
+spmv_ell_serial_host_sse	spmv_host/ell_host.h	/^void spmv_ell_serial_host_sse(const ell_matrix<IndexType, ValueType>& ell, $/;"	f
+spmv_hyb_serial_host	spmv_host/hyb_host.h	/^void spmv_hyb_serial_host(const hyb_matrix<IndexType,ValueType>& hyb, $/;"	f
+spmv_mix_serial_host	spmv_host/mix_host.h	/^void spmv_mix_serial_host(const mix_matrix<IndexType, ValueType>& mix, $/;"	f
+spmv_pkt_serial_host	spmv_host/pkt_host.h	/^void spmv_pkt_serial_host(const pkt_matrix<IndexType,ValueType>& pkt, $/;"	f
+start	timer.h	/^    long long int start;$/;"	m	class:timer
+stride	sparse_formats.h	/^    IndexType stride;$/;"	m	struct:dia_matrix
+stride	sparse_formats.h	/^    IndexType stride;$/;"	m	struct:ell_matrix
+sum_csr_duplicates	sparse_operations.h	/^void sum_csr_duplicates(const IndexType num_rows,$/;"	f
+sum_csr_duplicates	sparse_operations.h	/^void sum_csr_duplicates(csr_matrix<IndexType,ValueType>& A){$/;"	f
+tag	sparse_formats.h	/^    int tag;$/;"	m	struct:matrix_shape
+test_coo_matrix_kernels	tests.h	/^int test_coo_matrix_kernels(const csr_matrix<IndexType,ValueType>& csr, int kernel_tag, double *gflops, FILE *fp_feature)$/;"	f
+test_csr_matrix_kernels	tests.h	/^int test_csr_matrix_kernels(csr_matrix<IndexType,ValueType>& csr, int kernel_tag, double *gflops, FILE *fp_feature)$/;"	f
+test_dia_matrix_kernels	tests.h	/^int test_dia_matrix_kernels(const csr_matrix<IndexType,ValueType>& csr, int kernel_tag, double *gflops, FILE *fp_feature)  $/;"	f
+test_ell_matrix_kernels	tests.h	/^int test_ell_matrix_kernels(const csr_matrix<IndexType,ValueType>& csr, int kernel_tag, double *gflops, FILE *fp_feature)  $/;"	f
+test_spmv_kernel	test_spmv.h	/^void test_spmv_kernel(const SparseMatrix1 & sm1_host, SpMV1 spmv1,$/;"	f
+threads_per_packet	sparse_formats.h	/^    IndexType threads_per_packet;    \/\/ # of threads in a block, e.g. 256$/;"	m	struct:pkt_matrix
+time	sparse_formats.h	/^    double time, gflops;$/;"	m	struct:matrix_shape
+timer	timer.h	/^    timer()$/;"	f	class:timer
+timer	timer.h	/^class timer$/;"	c
+tmp_spmv_coo_serial_host_sse	spmv_host/coo_host.h	/^void tmp_spmv_coo_serial_host_sse(const coo_matrix<int, double>& coo, $/;"	f
+tmp_spmv_coo_serial_host_sse	spmv_host/coo_host.h	/^void tmp_spmv_coo_serial_host_sse(const coo_matrix<int, float>& coo, $/;"	f
+tmp_spmv_csr_serial_host_sse	spmv_host/csr_host.h	/^void tmp_spmv_csr_serial_host_sse(const csr_matrix<int, double>& csr, $/;"	f
+tmp_spmv_csr_serial_host_sse	spmv_host/csr_host.h	/^void tmp_spmv_csr_serial_host_sse(const csr_matrix<int, float>& csr, $/;"	f
+tmp_spmv_dia_serial_host_sse	spmv_host/dia_host.h	/^void tmp_spmv_dia_serial_host_sse(const dia_matrix<int, double>& dia, $/;"	f
+tmp_spmv_dia_serial_host_sse	spmv_host/dia_host.h	/^void tmp_spmv_dia_serial_host_sse(const dia_matrix<int, float>& dia, $/;"	f
+tmp_spmv_ell_serial_host_sse	spmv_host/ell_host.h	/^void tmp_spmv_ell_serial_host_sse(const ell_matrix<int, double>& ell, $/;"	f
+tmp_spmv_ell_serial_host_sse	spmv_host/ell_host.h	/^void tmp_spmv_ell_serial_host_sse(const ell_matrix<int, float>& ell, $/;"	f
+total_cycles	sparse_formats.h	/^    IndexType total_cycles;         \/\/ total amount of work in each thread lane$/;"	m	struct:packet_array
+usage	driver.cpp	/^void usage(int argc, char** argv)$/;"	f
+usage	partition.cxx	/^void usage(int argc, char** argv)$/;"	f
+value_type	sparse_formats.h	/^    typedef ValueType value_type;$/;"	t	struct:bcsr_matrix
+value_type	sparse_formats.h	/^    typedef ValueType value_type;$/;"	t	struct:coo_matrix
+value_type	sparse_formats.h	/^    typedef ValueType value_type;$/;"	t	struct:csr_matrix
+value_type	sparse_formats.h	/^    typedef ValueType value_type;$/;"	t	struct:dia_matrix
+value_type	sparse_formats.h	/^    typedef ValueType value_type;$/;"	t	struct:ell_matrix
+value_type	sparse_formats.h	/^    typedef ValueType value_type;$/;"	t	struct:hyb_matrix
+value_type	sparse_formats.h	/^    typedef ValueType value_type;$/;"	t	struct:mix_matrix
+value_type	sparse_formats.h	/^    typedef ValueType value_type;$/;"	t	struct:packet_array
+value_type	sparse_formats.h	/^    typedef ValueType value_type;$/;"	t	struct:pkt_matrix
+vector_to_array	array_utils.h	/^T * vector_to_array(const std::vector<T>& V){$/;"	f
