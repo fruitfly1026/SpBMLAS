@@ -5,7 +5,7 @@ CC=g++
 FLAG=-O3 #-msse4.2 -fp-model source 
 LDFLAG=-O3 #-msse4.2 -fp-model source
 
-OBJS=driver.o mmio.o
+OBJS=test_tensor.o mmio.o
 
 .cpp.o:
 	${CC} -o $@ -c ${FLAG} $<

@@ -167,4 +167,131 @@ csr_matrix<IndexType,ValueType> read_csr_matrix(const char * mm_filename, bool c
     return csr;
 }
 
+template <class IndexType,class ValueType>
+sptensor<IndexType,ValueType> read_coo_tensor(const char * mm_filename)
+{
+    sptensor<IndexType,ValueType> coo;
+
+    FILE * fid;
+    MM_typecode matcode;
+    
+    fid = fopen(mm_filename, "r");
+
+    if (fid == NULL){
+        printf("Unable to open file %s\n", mm_filename);
+        exit(1);
+    }
+
+    if (mm_read_banner(fid, &matcode) != 0){
+        printf("Could not process Matrix Market banner.\n");
+        exit(1);
+    }
+
+    if (!mm_is_valid(matcode)){
+        printf("Invalid Matrix Market file.\n");
+        exit(1);
+    }
+
+    if (!((mm_is_real(matcode) || mm_is_integer(matcode) || mm_is_pattern(matcode)) && mm_is_coordinate(matcode) && mm_is_sparse(matcode) ) ){
+        printf("Sorry, this application does not support ");
+        printf("Market Market type: [%s]\n", mm_typecode_to_str(matcode));
+        printf("Only sparse real-valued or pattern coordinate tensors are supported\n");
+        exit(1);
+    }
+
+    int num_dims, num_nonzeros;
+	std::vector<int> dims; 
+    if ( mm_read_tnsr_crd_size(fid,&num_dims,&num_nonzeros) !=0)
+            exit(1);
+#if 0    
+    int storage = sizeof(IndexType)*2* num_nonzeros + sizeof(ValueType)*(num_nonzeros + num_cols + num_rows);
+    if (storage >= L3CACHE_SIZE)
+    {
+        printf("The matrix (including vectors x, y) is larger than L3 cache size!\n");
+        coo.num_rows     = 0;
+        coo.num_cols     = 0;
+        coo.num_nonzeros = 0;
+        coo.I = NULL;
+        coo.J = NULL;
+        coo.V = NULL;
+        return coo;
+    }
+#endif
+    coo.num_dims     = (IndexType) num_dims;
+    coo.num_nonzeros = (IndexType) num_nonzeros;
+
+
+    printf("Reading sparse matrix from file (%s):",mm_filename);
+    fflush(stdout);
+
+    if (mm_is_pattern(matcode)){
+
+        // pattern matrix defines sparsity pattern, but not values
+/*        for( IndexType i = 0; i < coo.num_nonzeros; i++ ){
+            assert(fscanf(fid, " %d %d \n", &(coo.I[i]), &(coo.J[i])) == 2);
+            coo.I[i]--;      //adjust from 1-based to 0-based indexing
+            coo.J[i]--;
+            coo.V[i] = 1.0;  //use value 1.0 for all nonzero entries 
+        }*/
+    } else if (mm_is_real(matcode) || mm_is_integer(matcode)){
+
+        for( IndexType i = 0; i < coo.num_dims; i++ ){
+            IndexType I;
+            assert(fscanf(fid, " %d ", &I) == 1);
+            coo.dims.push_back(I); 
+        }
+        for( IndexType i = 0; i < coo.num_nonzeros; i++ ){
+            double V;  // always read in a double and convert later if necessary
+			vector<IndexType> subscript;
+		    for( IndexType j = 0; j < coo.num_dims; j++ ){
+		        IndexType I;
+		        assert(fscanf(fid, " %d ", &I) == 1);
+		        subscript.push_back(I); 
+		    }
+            assert(fscanf(fid, " %lf \n", &V) == 1);
+            coo.subs.push_back(subscript); 
+            coo.vals.push_back(V);
+        }
+    } else {
+        printf("Unrecognized data type\n");
+        exit(1);
+    }
+
+    fclose(fid);
+    printf(" done\n");
+
+    if( mm_is_symmetric(matcode) ){ //duplicate off diagonal entries
+/*
+        IndexType off_diagonals = 0;
+        for( IndexType i = 0; i < coo.num_nonzeros; i++ ){
+            if( coo.I[i] != coo.J[i] )
+                off_diagonals++;
+        }
+
+        IndexType true_nonzeros = 2*off_diagonals + (coo.num_nonzeros - off_diagonals);
+
+        IndexType* new_I = new_array<IndexType>(true_nonzeros);
+        IndexType* new_J = new_array<IndexType>(true_nonzeros);
+        ValueType * new_V = new_array<ValueType>(true_nonzeros);
+
+        IndexType ptr = 0;
+        for( IndexType i = 0; i < coo.num_nonzeros; i++ ){
+            if( coo.I[i] != coo.J[i] ){
+                new_I[ptr] = coo.I[i];  new_J[ptr] = coo.J[i];  new_V[ptr] = coo.V[i];
+                ptr++;
+                new_J[ptr] = coo.I[i];  new_I[ptr] = coo.J[i];  new_V[ptr] = coo.V[i];
+                ptr++;
+            } else {
+                new_I[ptr] = coo.I[i];  new_J[ptr] = coo.J[i];  new_V[ptr] = coo.V[i];
+                ptr++;
+            }
+        }       
+         delete_array(coo.I); delete_array(coo.J); delete_array(coo.V);
+         coo.I = new_I;  coo.J = new_J; coo.V = new_V;      
+         coo.num_nonzeros = true_nonzeros;*/
+    } //end symmetric case
+
+    return coo;
+}
+
 

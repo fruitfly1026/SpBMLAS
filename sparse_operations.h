@@ -24,6 +24,7 @@
 
 #include <algorithm>
 #include "sparse_formats.h"
+#include "sparse_tensor.h"
 #include "mem.h"
 
 
