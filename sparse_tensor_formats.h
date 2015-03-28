@@ -20,7 +20,7 @@ struct tensor_shape
 };
 
 
-// COOrdinate tensor
+// COOrdinate tensor --  SPTENSOR
 
 template <typename IndexType, typename ValueType>
 struct sptensor : public tensor_shape<IndexType> 
@@ -33,4 +33,23 @@ struct sptensor : public tensor_shape<IndexType>
 
 };
 
+//  COOrdinate matricized tensor - SPTENMAT
+
+
+template <typename IndexType, typename ValueType>
+struct sptenmat 
+{
+    typedef IndexType index_type;
+    typedef ValueType value_type;
+
+    double time, gflops;
+    int tag;
+    IndexType num_dims, num_nonzeros;
+    std::vector< index_type> tsize;  				// dimension of tensors
+    std::vector< int > rdims; 						// indices in tensor which mao to the row of corresponding matrix
+    std::vector< int > cdims; 						// indices in tensor which mao to the row of corresponding matrix
+    std::vector< std::vector<index_type> > subs;	// Subscripts of non-zero entries
+	std::vector< value_type > vals;					// valu of non-zeros
+
+};
 

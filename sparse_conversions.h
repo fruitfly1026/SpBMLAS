@@ -23,11 +23,60 @@
 #include <math.h>
 #include "sparse_operations.h"
 
+
+////////////////////////////////////////////////////////////////////////////////
+// Convert COO Tensor to SPTENMAT Format
+// 
+////////////////////////////////////////////////////////////////////////////////
+
+template <class IndexType, class ValueType>
+sptenmat<IndexType, ValueType>
+ sptensor_to_sptenmat(const sptensor<IndexType,ValueType>& coo, const std::vector<int> rows_d, const std::vector<int> cols_d )
+{
+    sptenmat<IndexType, ValueType> coo_mat;
+	std::vector <IndexType> rsize;
+	std::vector <IndexType> csize;
+
+	coo_mat.num_nonzeros=coo.num_nonzeros;
+	coo_mat.num_dims=coo.num_dims;
+	coo_mat.tsize=coo.dims;
+	coo_mat.rdims=rows_d;
+	coo_mat.cdims=cols_d;
+	coo_mat.vals=coo.vals;
+
+	for(int i=0; i<rows_d.size(); i++)
+		rsize.push_back(coo.dims[rows_d[i]]);
+	for(int i=0; i<cols_d.size(); i++)
+		csize.push_back(coo.dims[cols_d[i]]);
+	
+	for(int i=0;i<coo.num_nonzeros;i++)
+	{
+		std::vector <IndexType> row_sub;
+		for(int j=0; j<rows_d.size(); j++)
+			row_sub.push_back(coo.subs[i][rows_d[j]]);
+
+		std::vector <IndexType> col_sub;
+		for(int j=0; j<cols_d.size(); j++)
+			col_sub.push_back(coo.subs[i][cols_d[j]]);
+
+		std::vector<IndexType> indices;
+		IndexType r=sub2ind(rsize,row_sub);
+		IndexType c=sub2ind(csize,col_sub);
+		indices.push_back(r);
+		indices.push_back(c);
+		//cout<<r<<" "<<c<<endl;
+		coo_mat.subs.push_back(indices);
+	}
+    return coo_mat;
+}
+
+
 ////////////////////////////////////////////////////////////////////////////////
 //! Convert CSR format to DIA format
 // If the matrix has more than 'max_diags' occupied diagonals, then a dia_matrix
 // with dimensions (0,0) and 0 nonzeros is returned.
 ////////////////////////////////////////////////////////////////////////////////
+
 template <class IndexType, class ValueType>
 dia_matrix<IndexType, ValueType>
  csr_to_dia(const csr_matrix<IndexType,ValueType>& csr, const IndexType max_diags, FILE *fp_feature, const IndexType alignment = 16)
@@ -165,7 +214,6 @@ dia_matrix<IndexType, ValueType>
 
     return dia;
 }
-
 
 
 ////////////////////////////////////////////////////////////////////////////////

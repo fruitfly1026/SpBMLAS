@@ -24,8 +24,27 @@
 
 #include <algorithm>
 #include "sparse_formats.h"
-#include "sparse_tensor.h"
+#include "sparse_tensor_formats.h"
 #include "mem.h"
+
+
+////////////////////////////////////////////////////////////////////////////////
+//! Obtain equivalent index given a set od subscripts and their corresponding 
+//! dimension values.
+////////////////////////////////////////////////////////////////////////////////
+
+
+template <typename IndexType>
+IndexType sub2ind(const std::vector <IndexType>& siz, const std::vector <IndexType>& subs){	
+
+	IndexType idx= (IndexType) (subs[0]);
+	
+	for (int i=0; i< siz.size()-1 ; i++)
+	{
+		idx+=siz[i]*(subs[i+1]);
+	}
+	return idx;
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -37,6 +56,10 @@
 //! @param Ai             CSR index array
 //! @param Ax             CSR data array
 ////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 template <class IndexType, class ValueType>
 void sum_csr_duplicates(const IndexType num_rows,
                         const IndexType num_cols, 
