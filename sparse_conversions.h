@@ -44,11 +44,26 @@ sptenmat<IndexType, ValueType>
 	coo_mat.cdims=cols_d;
 	coo_mat.vals=coo.vals;
 
+	IndexType num_rows = (IndexType) 1;	
+	IndexType num_cols = (IndexType) 1;
+
 	for(int i=0; i<rows_d.size(); i++)
-		rsize.push_back(coo.dims[rows_d[i]]);
+		{
+			int temp_r=coo.dims[rows_d[i]];
+			rsize.push_back(temp_r);
+			num_rows*=temp_r;
+		}
+
 	for(int i=0; i<cols_d.size(); i++)
-		csize.push_back(coo.dims[cols_d[i]]);
+		{
+			int temp_c=coo.dims[cols_d[i]];
+			csize.push_back(temp_c);
+			num_cols*=temp_c;
+		}
 	
+	coo_mat.num_rows=num_rows;
+	coo_mat.num_cols=num_cols;
+
 	for(int i=0;i<coo.num_nonzeros;i++)
 	{
 		std::vector <IndexType> row_sub;
@@ -1027,4 +1042,62 @@ csr_matrix<IndexType, ValueType>
 ////////////////////////////////////////////////////////////////////////////////
 
 #include "csr_to_pkt.h"
+
+
+////////////////////////////////////////////////////////////////////////////////
+//! Convert SPTENMAT format to CSR format
+// Storage for output is assumed to have been allocated
+//! @param rows           row array
+//! @param cols           column array
+//! @param data           data array
+//! @param num_rows       number of rows
+//! @param num_cols       number of columns
+//! @param num_nonzeros   number of nonzeros
+//! @param Ap             CSR pointer array
+//! @param Ai             CSR index array
+//! @param Ax             CSR data array
+////////////////////////////////////////////////////////////////////////////////
+template <class IndexType, class ValueType>
+csr_matrix<IndexType, ValueType> sptenmat_to_csr(const sptenmat<IndexType, ValueType> ten_mat, bool compact = false)
+{
+    csr_matrix<IndexType, ValueType> csr;
+
+    csr.num_rows     = ten_mat.num_rows;
+    csr.num_cols     = ten_mat.num_cols;
+    csr.num_nonzeros = ten_mat.num_nonzeros;
+    csr.tag = 0;
+
+    csr.Ap = new_array<IndexType>(csr.num_rows + 1);
+    csr.Aj = new_array<IndexType>(csr.num_nonzeros);
+    csr.Ax = new_array<ValueType>(csr.num_nonzeros);
+
+
+	IndexType *I;
+	IndexType *J;
+	ValueType *vals;
+
+    I = new_array<IndexType>(csr.num_nonzeros);
+    J = new_array<IndexType>(csr.num_nonzeros);
+    vals = new_array<ValueType>(csr.num_nonzeros);
+
+	for(int i=0;i<csr.num_nonzeros;i++)
+	{
+		I[i] = ten_mat.subs[i][0];
+		J[i] = ten_mat.subs[i][1];
+		vals[i] = ten_mat.vals[i];
+	}
+    coo_to_csr(I, J, vals,
+               csr.num_rows, csr.num_cols, csr.num_nonzeros,
+               csr.Ap, csr.Aj, csr.Ax);
+    
+    if (compact) {
+        //sum duplicates together
+        sum_csr_duplicates(csr.num_rows, csr.num_cols, csr.Ap, csr.Aj, csr.Ax);
+        csr.num_nonzeros = csr.Ap[csr.num_rows];
+    }
+
+    return csr;
+	    
+}
+
 

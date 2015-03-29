@@ -44,10 +44,10 @@ struct sptenmat
 
     double time, gflops;
     int tag;
-    IndexType num_dims, num_nonzeros;
+    IndexType num_dims, num_nonzeros,num_rows, num_cols;
     std::vector< index_type> tsize;  				// dimension of tensors
-    std::vector< int > rdims; 						// indices in tensor which mao to the row of corresponding matrix
-    std::vector< int > cdims; 						// indices in tensor which mao to the row of corresponding matrix
+    std::vector< int > rdims; 						// indices in tensor which map to the row of corresponding matrix
+    std::vector< int > cdims; 						// indices in tensor which map to the row of corresponding matrix
     std::vector< std::vector<index_type> > subs;	// Subscripts of non-zero entries
 	std::vector< value_type > vals;					// valu of non-zeros
 
